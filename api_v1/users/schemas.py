@@ -1,8 +1,11 @@
-from pydantic import BaseModel, ConfigDict
+from typing import List
+
+from pydantic import BaseModel, ConfigDict, EmailStr
 
 
 class UserBaseIn(BaseModel):
     name: str
+    emails: List[EmailStr]
     password: str
     optional: str | None = None
 
@@ -10,6 +13,7 @@ class UserBaseIn(BaseModel):
 class UserBaseOut(BaseModel):
     id: int
     name: str
+    emails: List[EmailStr]
     optional: str | None = None
 
 
@@ -22,21 +26,5 @@ class UserOut(UserBaseOut):
     pass
 
 
-class UserCreateIn(UserBaseIn):
-    pass
-
-
-class UserCreateOut(UserBaseOut):
-    pass
-
-
-class UserUpdateIn(UserBaseIn):
-    pass
-
-
-class UserUpdateOut(UserBaseOut):
-    pass
-
-
-class UserDeleteOut(UserBaseOut):
+class UserIn(UserBaseIn):
     pass
