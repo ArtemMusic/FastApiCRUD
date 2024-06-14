@@ -7,7 +7,7 @@ from api_v1.users.depends import get_user_by_id
 from api_v1.users.schemas import UserOut, UserIn
 
 router = APIRouter(
-    prefix='/user', tags=['users']
+    prefix='/user', tags=['users [sync]']
 )
 
 
